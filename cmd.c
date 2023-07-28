@@ -308,7 +308,7 @@ int do_dbg_mmio(char *cmd[], unsigned int param_count)
 
 	if (param_count == 2) // two parameters. register read.
 	{
-		if ((strcmp(cmd[1], "-d") != 0)&&(strcmp(cmd[1], "-dp") != 0)){
+		if ((strcmp(cmd[1], "-d") != 0)&&(strcmp(cmd[1], "-dp") != 0)){  //for argv =2 && not reag rigister;
 		reg_index = StoH(cmd[1]);
 		reg_data = readl(video_pci_prop.mapped_mmioBase + reg_index);
 		printf("\nRead MMIO %x = 0x%08x\n", reg_index, reg_data);
